@@ -1,19 +1,19 @@
-package com.jakmos.coroutines_playground
+package com.jakmos.coroutinesplayground.service
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.jakmos.coroutines_playground.databinding.FragmentSecondBinding
+import androidx.fragment.app.Fragment
+import com.jakmos.coroutinesplayground.databinding.FragmentServiceBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class ServiceFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentServiceBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,23 +22,27 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentServiceBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun startService() {
+        context?.startService(Intent(context, SampleService::class.java))
+    }
+
+    private fun stopService() {
+        context?.stopService(Intent(context, SampleService::class.java))
     }
 }

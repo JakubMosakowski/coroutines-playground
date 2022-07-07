@@ -1,4 +1,4 @@
-package com.jakmos.coroutines_playground
+package com.jakmos.coroutinesplayground.fakeviewmodel
 
 import android.util.Log
 import kotlinx.coroutines.CoroutineExceptionHandler

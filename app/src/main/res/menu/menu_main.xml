@@ -1,10 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.jakmos.coroutines_playground.MainActivity">
+    tools:context="com.jakmos.coroutinesplayground.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/action_fake_view_model"
+        android:title="@string/fake_view_model"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_service"
+        android:title="@string/service"
         app:showAsAction="never" />
 </menu>
