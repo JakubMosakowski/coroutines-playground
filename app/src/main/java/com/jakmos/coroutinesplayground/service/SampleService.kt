@@ -3,14 +3,18 @@ package com.jakmos.coroutinesplayground.service
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import android.util.Log
 
 internal class SampleService : Service() {
 
-    lateinit var controller: ServiceController
+    private var controller: ServiceController? = null
 
     override fun onCreate() {
         super.onCreate()
-        controller.onCreate()
+        Log.v("KUBA", "Start service")
+
+        controller = ServiceController()
+        controller?.onCreate()
     }
 
     override fun onBind(intent: Intent?): IBinder? =
@@ -20,7 +24,8 @@ internal class SampleService : Service() {
         START_STICKY
 
     override fun onDestroy() {
-        controller.onDestroy()
+        Log.v("KUBA", "Destroy service")
+        controller?.onDestroy()
         super.onDestroy()
     }
 }

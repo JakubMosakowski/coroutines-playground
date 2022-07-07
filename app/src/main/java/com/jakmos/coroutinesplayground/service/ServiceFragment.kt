@@ -2,6 +2,7 @@ package com.jakmos.coroutinesplayground.service
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,11 +27,18 @@ class ServiceFragment : Fragment() {
 
         _binding = FragmentServiceBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonStart.setOnClickListener {
+            startService()
+        }
+
+        binding.buttonDestroy.setOnClickListener {
+            stopService()
+        }
     }
 
     override fun onDestroyView() {
@@ -39,10 +47,12 @@ class ServiceFragment : Fragment() {
     }
 
     private fun startService() {
-        context?.startService(Intent(context, SampleService::class.java))
+        applicationContext?.startService(Intent(applicationContext, SampleService::class.java))
     }
 
     private fun stopService() {
-        context?.stopService(Intent(context, SampleService::class.java))
+        applicationContext?.stopService(Intent(applicationContext, SampleService::class.java))
     }
+
+    private val applicationContext get() = requireActivity().application
 }
