@@ -5,4 +5,5 @@
     <string name="destroy">Destroy</string>
     <string name="fake_view_model">Fake view model</string>
     <string name="service">Service</string>
+    <string name="leak">Leak</string>
 </resources>
