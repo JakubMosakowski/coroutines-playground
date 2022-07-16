@@ -13,6 +13,10 @@
         android:id="@+id/toFakeViewModelFragment"
         app:destination="@id/FakeViewModelFragment" />
 
+    <action
+        android:id="@+id/toGuideFragment"
+        app:destination="@id/GuideFragment" />
+
     <fragment
         android:id="@+id/FakeViewModelFragment"
         android:name="com.jakmos.coroutinesplayground.fakeviewmodel.FakeViewModelFragment"
@@ -24,4 +28,10 @@
         android:name="com.jakmos.coroutinesplayground.service.ServiceFragment"
         android:label="@string/service"
         tools:layout="@layout/fragment_service" />
+
+    <fragment
+        android:id="@+id/GuideFragment"
+        android:name="com.jakmos.coroutinesplayground.guide.GuideFragment"
+        android:label="@string/guide"
+        tools:layout="@layout/fragment_guide" />
 </navigation>

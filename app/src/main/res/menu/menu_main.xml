@@ -16,4 +16,9 @@
         android:id="@+id/action_leak"
         android:title="@string/leak"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_guide"
+        android:title="@string/guide"
+        app:showAsAction="never" />
 </menu>

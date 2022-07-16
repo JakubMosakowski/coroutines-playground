@@ -12,15 +12,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.jakmos.coroutinesplayground.databinding.ActivityMainBinding
 import com.jakmos.coroutinesplayground.leak.NextActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private val scope = CoroutineScope(Dispatchers.IO)
-    private val useCase = UseCase()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        useCase.run(scope)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -53,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, NextActivity::class.java))
             finish()
             Log.v("KUBA", "After on finish")
+            true
+        }
+        R.id.action_guide -> {
+            navController.navigate(R.id.toGuideFragment)
             true
         }
         else -> super.onOptionsItemSelected(item)
