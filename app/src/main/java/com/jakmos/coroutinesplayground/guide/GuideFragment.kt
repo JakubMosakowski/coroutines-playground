@@ -19,7 +19,11 @@ class GuideFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val viewModel: GuideViewModel by viewModels()
+    private val idealViewModel: IdealViewModel by viewModels()
+    private val threadViewModel: ThreadViewModel by viewModels()
+    private val callbackViewModel: CallbackViewModel by viewModels()
+    private val coroutineViewModel: CoroutineViewModel by viewModels()
+    private val flowViewModel: FlowViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +36,11 @@ class GuideFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.onCreate()
+//        idealViewModel.onCreate()
+//        threadViewModel.onCreate()
+//        callbackViewModel.onCreate()
+        coroutineViewModel.onCreate()
+//        flowViewModel.onCreate()
     }
 
     override fun onDestroyView() {
