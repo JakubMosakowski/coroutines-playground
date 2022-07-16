@@ -15,7 +15,10 @@ class GuideViewModel : ViewModel() {
 
     fun onCreate() {
         showLoader()
-        println(fetchBooks())
+        val books = fetchBooks()
+        val authors = fetchAuthors()
+        println("Authors: ${authors}")
+        println("Books: ${books}")
         hideLoader()
     }
 
@@ -25,12 +28,22 @@ class GuideViewModel : ViewModel() {
 
     private fun fetchBooks(): List<String> {
         println("Fetching books...")
-        Thread.sleep(10000)
+        Thread.sleep(5000)
         println(".")
         println(".")
         println(".")
         println("Books fetched!")
         return listOf("Harry Potter", "Lord of the rings", "The Name of the Wind")
+    }
+
+    private fun fetchAuthors(): List<String> {
+        println("Fetching authors...")
+        Thread.sleep(3000)
+        println(".")
+        println(".")
+        println(".")
+        println("Authors fetched!")
+        return listOf("J.K. Rowling", "Tolkien", "Patrick Rothfuss")
     }
 
     private fun hideLoader() {
