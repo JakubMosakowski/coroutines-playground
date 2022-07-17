@@ -7,7 +7,6 @@ import kotlinx.coroutines.launch
 
 class CoroutineViewModel : ViewModel() {
 
-
     fun onCreate() = viewModelScope.launch {
         showLoader()
 
