@@ -23,6 +23,7 @@ class GuideFragment : Fragment() {
     private val threadViewModel: ThreadViewModel by viewModels()
     private val callbackViewModel: CallbackViewModel by viewModels()
     private val coroutineViewModel: CoroutineViewModel by viewModels()
+    private val jobViewModel: JobViewModel by viewModels()
     private val flowViewModel: FlowViewModel by viewModels()
 
     override fun onCreateView(
@@ -39,8 +40,15 @@ class GuideFragment : Fragment() {
 //        idealViewModel.onCreate()
 //        threadViewModel.onCreate()
 //        callbackViewModel.onCreate()
-        coroutineViewModel.onCreate()
+//        coroutineViewModel.onCreate()
 //        flowViewModel.onCreate()
+
+        binding.start.setOnClickListener {
+            jobViewModel.start()
+        }
+        binding.stop.setOnClickListener {
+            jobViewModel.stop()
+        }
     }
 
     override fun onDestroyView() {
