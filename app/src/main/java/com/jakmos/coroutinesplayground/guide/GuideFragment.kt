@@ -41,13 +41,14 @@ class GuideFragment : Fragment() {
 //        threadViewModel.onCreate()
 //        callbackViewModel.onCreate()
 //        coroutineViewModel.onCreate()
-//        flowViewModel.onCreate()
 
-        binding.start.setOnClickListener {
-            jobViewModel.start()
+        binding.first.setOnClickListener {
+//            jobViewModel.start()
+//            flowViewModel.start()
         }
-        binding.stop.setOnClickListener {
-            jobViewModel.stop()
+        binding.second.setOnClickListener {
+//            jobViewModel.stop()
+//            flowViewModel.emit()
         }
     }
 
