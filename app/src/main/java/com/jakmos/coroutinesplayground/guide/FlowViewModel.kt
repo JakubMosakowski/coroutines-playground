@@ -10,34 +10,34 @@ import kotlinx.coroutines.launch
 
 class FlowViewModel : ViewModel() {
 
-    private val flow = flow {
+    private val coldFlow = flow {
         (0..Int.MAX_VALUE).forEach { index ->
             delay(1000L)
             emit(index)
         }
     }
 
-    private val sharedFlow = MutableSharedFlow<Long>(replay = 10)
-    private val stateFlow = MutableStateFlow(0L)
+    private val hotSharedFlow = MutableSharedFlow<Long>(replay = 0)
+    private val hotStateFlow = MutableStateFlow(0L)
 
     fun emit() = viewModelScope.launch {
-        sharedFlow.emit(2)
-        stateFlow.emit(2)
+        hotSharedFlow.emit(2)
+        hotStateFlow.emit(2)
     }
 
     fun start() {
         viewModelScope.launch {
-            flow.collect { value ->
+            coldFlow.collect { value ->
                 println("Collected from flow $value!")
             }
         }
         viewModelScope.launch {
-            sharedFlow.collect { value ->
+            hotSharedFlow.collect { value ->
                 println("Collected from shared flow $value!")
             }
         }
         viewModelScope.launch {
-            stateFlow.collect { value ->
+            hotStateFlow.collect { value ->
                 println("Collected from state flow $value!")
             }
         }

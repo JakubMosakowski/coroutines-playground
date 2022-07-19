@@ -37,7 +37,7 @@ class GuideFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        idealViewModel.onCreate()
+        idealViewModel.onCreate()
 //        threadViewModel.onCreate()
 //        callbackViewModel.onCreate()
 //        coroutineViewModel.onCreate()
