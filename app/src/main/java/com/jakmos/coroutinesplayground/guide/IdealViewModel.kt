@@ -9,7 +9,7 @@ class IdealViewModel : ViewModel() {
      *  1. Downloading the data (from API or database) - what is API?
      *  2. Data processing (mapping?)
      *  3. Data transfer (to API or database).
-     *  4. Long-running operations (asynchronously) - what does it mean asynchronously?
+     *  4. Long-running operations
      *  5. Concurrency - what is concurrent programming?
      */
 
