@@ -6,7 +6,7 @@ class IdealViewModel : ViewModel() {
 
     /**
      * What for:
-     *  1. Downloading the data (from API or database) - what is API?
+     *  1. Downloading the data (from API or database)
      *  2. Data processing (mapping?)
      *  3. Data transfer (to API or database).
      *  4. Long-running operations
