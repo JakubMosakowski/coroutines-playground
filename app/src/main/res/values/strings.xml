@@ -7,4 +7,6 @@
     <string name="service">Service</string>
     <string name="leak">Leak</string>
     <string name="guide">Guide</string>
+    <string name="emit">Emit</string>
+    <string name="collect">Collect</string>
 </resources>

@@ -21,4 +21,14 @@
         android:id="@+id/action_guide"
         android:title="@string/guide"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_emit"
+        android:title="@string/emit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_collect"
+        android:title="@string/collect"
+        app:showAsAction="never" />
 </menu>

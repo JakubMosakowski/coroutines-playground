@@ -54,6 +54,14 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.toGuideFragment)
             true
         }
+        R.id.action_emit -> {
+            navController.navigate(R.id.toEmitFragment)
+            true
+        }
+        R.id.action_collect -> {
+            navController.navigate(R.id.toCollectFragment)
+            true
+        }
         else -> super.onOptionsItemSelected(item)
     }
 

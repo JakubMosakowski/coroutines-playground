@@ -17,6 +17,14 @@
         android:id="@+id/toGuideFragment"
         app:destination="@id/GuideFragment" />
 
+    <action
+        android:id="@+id/toEmitFragment"
+        app:destination="@id/EmitFragment" />
+
+    <action
+        android:id="@+id/toCollectFragment"
+        app:destination="@id/CollectFragment" />
+
     <fragment
         android:id="@+id/FakeViewModelFragment"
         android:name="com.jakmos.coroutinesplayground.fakeviewmodel.FakeViewModelFragment"
@@ -34,4 +42,16 @@
         android:name="com.jakmos.coroutinesplayground.guide.GuideFragment"
         android:label="@string/guide"
         tools:layout="@layout/fragment_guide" />
+
+    <fragment
+        android:id="@+id/EmitFragment"
+        android:name="com.jakmos.coroutinesplayground.guide.shared.emit.EmitFragment"
+        android:label="@string/emit"
+        tools:layout="@layout/fragment_emit" />
+
+    <fragment
+        android:id="@+id/CollectFragment"
+        android:name="com.jakmos.coroutinesplayground.guide.shared.collect.CollectFragment"
+        android:label="@string/collect"
+        tools:layout="@layout/fragment_collect" />
 </navigation>
